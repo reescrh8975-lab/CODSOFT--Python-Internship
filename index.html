@@ -4,178 +4,328 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reena S | Portfolio</title>
+  <title>Reena S. | ECE Portfolio</title>
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #081426;
-      color: #f1f5f9;
+      background: #0b1020;
+      color: #e5e7eb;
       line-height: 1.7;
     }
     header {
-      background: #101f36;
-      padding: 18px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 20px 8%;
+      background: #11182b;
+      position: sticky;
+      top: 0;
       flex-wrap: wrap;
+      gap: 12px;
     }
-    header strong { color: #60a5fa; font-size: 22px; }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-    section { padding: 55px 8%; }
-    .hero {
-      text-align: center;
-      padding-top: 65px;
-      padding-bottom: 65px;
-    }
-    .profile-photo {
-      width: 155px;
-      height: 155px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #60a5fa;
-      margin-bottom: 15px;
-    }
-    h1 { font-size: 42px; margin: 8px 0; }
-    h2 { color: #60a5fa; }
-    .subtitle { color: #cbd5e1; }
-    .card {
-      background: #101f36;
-      border: 1px solid #263b57;
-      border-radius: 14px;
-      padding: 22px;
-      margin: 14px 0;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skills span {
-      background: #1d3554;
-      padding: 8px 14px;
-      border-radius: 20px;
-    }
-    a { color: #93c5fd; }
-    .button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 22px;
-      background: #101f36;
-      color: #cbd5e1;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 32px; }
-      nav { margin-top: 10px; }
+    .logo { color: #a5b4fc; font-size: 22px; font-weight: bold; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    a { color: #a5b4fc; text-decoration: none; }
+    nav a { color: #e5e7eb; font-size: 14px; }
+    nav a:hover, a:hover { color: #818cf8; }
+    section { padding: 65px 8%; scroll-margin-top: 70px; }
+    .hero { min-height: 390px; display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start; }
+    .tag { color: #a5b4fc; letter-spacing: 2px; font-size: 13px; }
+    h1 { font-size: clamp(34px, 6vw, 54px); margin: 12px 0; }
+    h2 { color: #a5b4fc; font-size: 28px; margin-bottom: 20px; }
+    h3 { color: #fff; margin-bottom: 8px; }
+    p { color: #cbd5e1; margin-bottom: 12px; }
+    .button { display: inline-block; background: #6366f1; color: white;
+      padding: 10px 18px; border-radius: 8px; margin: 10px 10px 0 0; }
+    .button.secondary { background: transparent; border: 1px solid #6366f1; }
+    .section-alt { background: #11182b; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,
+      minmax(220px, 1fr)); gap: 18px; }
+    .card { background: #151e33; border: 1px solid #27334c;
+      padding: 22px; border-radius: 12px; }
+    .pill { display: inline-block; background: #202b47; color: #c7d2fe;
+      padding: 6px 12px; margin: 5px 4px 5px 0; border-radius: 20px;
+      font-size: 14px; }
+    footer { text-align: center; padding: 25px; color: #94a3b8; }
+    @media(max-width: 500px) {
+      header { padding: 16px 5%; }
+      section { padding: 45px 6%; }
+      nav { gap: 10px; }
     }
   </style>
 </head>
-<body>
+<
+<style>
+.profile-section {
+    padding: 55px 7%;
+    color: #f4f7ff;
+    background: linear-gradient(135deg, #080f24, #101d3b);
+    font-family: Arial, sans-serif;
+}
+.profile-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 30px 0 45px;
+}
+.profile-photo {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #6d9cff;
+    box-shadow: 0 0 25px #3158a566;
+}
+.profile-info {
+    max-width: 520px;
+}
+.profile-info h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    margin: 0 0 12px;
+}
+.profile-info p {
+    line-height: 1.8;
+    color: #c5d2ee;
+}
+.profile-section h2 {
+    color: #a9c7ff;
+    margin-bottom: 20px;
+}
+.profile-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+.profile-card {
+    padding: 22px;
+    border-radius: 14px;
+    background: #172647;
+    border: 1px solid #30466e;
+    overflow-wrap: anywhere;
+}
+.profile-card h3 {
+    color: #a9c7ff;
+    margin-top: 0;
+}
+.profile-card a {
+    color: #d0e0ff;
+    text-decoration: none;
+}
+.profile-card a:hover {
+    text-decoration: underline;
+}
+.profile-card p {
+    line-height: 1.7;
+}
+@media (max-width: 600px) {
+    .profile-section { padding: 35px 5%; }
+    .profile-hero { gap: 24px; text-align: center; }
+}
+</style>
 
-<header>
-  <strong>Reena S</strong>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<section class="profile-section" id="my-profile">
 
-<section class="hero">
-  <img src="./profile.jpg" alt="Reena's profile photo"
-       class="profile-photo">
-  <h1>Hi, I'm Reena S</h1>
-  <p class="subtitle">Electronics and Communication Engineering Student</p>
-  <p>Interested in IoT, Networking and Emerging Technologies.</p>
-  <a class="button" href="#contact">Contact Me</a>
-</section>
+    <!-- PROFILE / HOME -->
+    <div class="profile-hero">
+        <img
+            class="profile-photo"
+            src="./profile.jpg"
+            alt="Profile photo"
+        >
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    I am an Electronics and Communication Engineering student
-    interested in learning new technologies and developing practical
-    projects. I am building my skills through courses, certifications
-    and hands-on learning.
-  </div>
-</section>
+        <div class="profile-info">
+            <p>Hello, welcome to my portfolio!</p>
+            <h1>I'm Reena S</h1>
+            <h3>Electronics and Communication Engineering Student</h3>
+            <p>
+                Interested in Python, IoT, Networking and
+                emerging technologies. Exploring new skills
+                through projects and continuous learning.
+            </p>
+        </div>
+    </div>
 
-<section id="education">
-  <h2>Education</h2>
-  <div class="card">
-    <h3>B.E. Electronics and Communication Engineering</h3>
-    <p>VSB College of Engineering and Technical Campus, Coimbatore</p>
-    <p>CGPA: 7.55</p>
-  </div>
-</section>
+    <!-- EDUCATION -->
+    <h2 id="education">Education</h2>
+    <div class="profile-card">
+        <h3>B.E. Electronics and Communication Engineering</h3>
+        <p>VSB College of Engineering and Technical Campus, Coimbatore</p>
+        <p><strong>CGPA:</strong> 7.55</p>
+    </div>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="card skills">
-    <span>Python</span>
-    <span>Communication</span>
-    <span>Typing</span>
-    <span>IoT</span>
-    <span>Networking</span>
-  </div>
-</section>
+    <!-- CONTACT DETAILS -->
+    <h2 id="contact" style="margin-top: 42px;">Contact & Profiles</h2>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card">
-    <h3>Skill Gap Analyzer</h3>
-    <p>A project concept designed to help learners identify skill gaps
-    and understand the skills needed for career goals.</p>
-  </div>
-</section>
+    <div class="profile-cards">
 
-<section id="certificates">
-  <h2>Certifications & Training</h2>
-  <div class="card">
-    <ul>
-      <li>Artificial Intelligence Foundation – Infosys</li>
-      <li>Introduction to Cybersecurity – Cisco Networking Academy</li>
-      <li>IoT Edge Computing and IoT Analytics – Infosys</li>
-      <li>Data Science and Analytics – HP</li>
-      <li>Python Internship – CodSoft</li>
-      <li>Vectonix Internship</li>
-    </ul>
-    <p>Additional certifications and courses can be added here.</p>
-  </div>
-</section>
+        <div class="profile-card">
+            <h3>Email</h3>
+            <p>
+                <a href="mailto:reescrh8975@gmail.com">
+                    reescrh8975@gmail.com
+                </a>
+            </p>
+        </div>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: <a href="mailto:reescrh8975@gmail.com">
-      reescrh8975@gmail.com</a></p>
+        <div class="profile-card">
+            <h3>GitHub</h3>
+            <p>
+                <a href="https://github.com/reescrh8975-lab"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit my GitHub profile ↗
+                </a>
+            </p>
+        </div>
+
+        <div class="profile-card">
+            <h3>LinkedIn</h3>
+            <p>
+                <a href="https://www.linkedin.com/in/reena-s-47a141399/"
+                   target="_blank" rel="noopener noreferrer">
+                    Connect on LinkedIn ↗
+                </a>
+            </p>
+        </div>
+
+        <!-- Remove this card if you don't want your phone public -->
+        <div class="profile-card">
+            <h3>Phone</h3>
+            <p>
+                <a href="tel:9042411707">Call me</a>
+            </p>
+        </div>
+
+    </div>
+</section>body>
+  <header>
+    <div class="logo">REENA S.</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="tag">ELECTRONICS & COMMUNICATION ENGINEERING</p>
+    <h1>Hello, I'm <span style="color:#a5b4fc">Reena.</span></h1>
+    <h3>ECE Student | Python Learner | Aspiring Engineer</h3>
+    <p>Exploring technology and building practical skills in
+      IoT, networking and emerging technologies.</p>
+    <div>
+      <a class="button" href="#projects">Explore My Projects</a>
+      <a class="button secondary" href="#contact">Contact Me</a>
+    </div>
+  </section>
+
+  <section id="about" class="section-alt">
+    <h2>About Me</h2>
+    <p>I'm an Electronics and Communication Engineering student at
+      VSB College of Engineering Technical Campus, Coimbatore.</p>
+    <p>I'm interested in learning new technologies and applying my
+      knowledge through projects, online courses and practical
+      experiences. My areas of interest include IoT, networking
+      and emerging technologies.</p>
+    <p><strong>Education:</strong> B.E. Electronics and Communication
+      Engineering</p>
+    <p><strong>CGPA:</strong> Add your latest confirmed CGPA here.</p>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Technical Skills</h3>
+        <span class="pill">Python</span>
+        <span class="pill">Typing</span>
+      </div>
+      <div class="card">
+        <h3>Soft Skills</h3>
+        <span class="pill">Communication</span>
+        <span class="pill">Continuous Learning</span>
+      </div>
+      <div class="card">
+        <h3>Areas of Interest</h3>
+        <span class="pill">IoT</span>
+        <span class="pill">Networking</span>
+        <span class="pill">Emerging Technologies</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section-alt">
+    <h2>My Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Skill Gap Analyzer</h3>
+        <p>A website concept designed to help learners compare their
+          existing skills with skills required for a target role
+          and identify areas for improvement.</p>
+        <p><strong>Focus:</strong> Web development and career skills</p>
+        <p><strong>Technologies:</strong> HTML, CSS, JavaScript
+          and Firebase (where implemented)</p>
+        <a href="https://github.com/" target="_blank"
+          rel="noopener noreferrer">Add project repository →</a>
+      </div>
+      <div class="card">
+        <h3>Future ECE Project</h3>
+        <p>Planning to explore practical engineering projects
+          related to electronics, IoT and networking.</p>
+        <p>More project details will be added as they are completed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h2>Certifications & Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>AI & Data</h3>
+        <p>Infosys Artificial Intelligence Foundation</p>
+        <p>HP Data Science and Analytics</p>
+        <p>TCS Data Plus Overview Course</p>
+      </div>
+      <div class="card">
+        <h3>Electronics & IoT</h3>
+        <p>Mind Lister Digital Electronics Basics</p>
+        <p>Infosys IoT Edge Computing and IoT Analytics</p>
+        <p>Skill Up IoT</p>
+        <p>Coursera Engineering Circuit Analysis</p>
+      </div>
+      <div class="card">
+        <h3>Networking & Experience</h3>
+        <p>Cisco Introduction to Cyber Security</p>
+        <p>Forage Engineering Job Simulations</p>
+        <p>Vectonix Internship</p>
+        <p>Unstop Adobe Hackathon</p>
+        <p>ISTE and other learning achievements</p>
+      </div>
+    </div>
+    <p style="margin-top:18px">Add links to your actual certificates
+      when available. List only courses and certificates you have earned.</p>
+  </section>
+
+  <section id="contact" class="section-alt">
+    <h2>Let's Connect</h2>
+    <p>I'm interested in learning opportunities, internships
+      and collaborative projects.</p>
+    <p>Email: <a href="mailto:YOUR_EMAIL@example.com">
+      Add your email</a></p>
     <p>GitHub: <a href="https://github.com/reescrh8975-lab"
-      target="_blank" rel="noopener noreferrer">My GitHub</a></p>
-    <p>LinkedIn: <a
-      href="https://www.linkedin.com/in/reena-s-47a141399/"
-      target="_blank" rel="noopener noreferrer">My LinkedIn</a></p>
-  </div>
-</section>
+      target="_blank" rel="noopener noreferrer">Visit my GitHub</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/"
+      target="_blank" rel="noopener noreferrer">Add your LinkedIn profile</a></p>
+  </section>
 
-<footer>
-  <p>© 2026 Reena S | Portfolio</p>
-</footer>
-
+  <footer>
+    <p>Designed and built by Reena S. | © 2026</p>
+  </footer>
 </body>
 </html>
